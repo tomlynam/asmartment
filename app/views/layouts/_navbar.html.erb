@@ -1,0 +1,30 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+  <li class="divider"></li>
+  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+</ul>
+
+
+<!-- Navbar -->
+<nav>
+  <div class="nav-wrapper">
+    <i class="material-icons left brand-icon">settings_input_antenna</i>
+    <a href="/" class="brand-name">Asmartment</a>
+    <% if current_user %>
+	    <ul class="right hide-on-med-and-down">
+	      <li><a href="#">My Reviews</a></li>
+	      <!-- Dropdown Trigger -->
+	      <li>
+	      	<a class="dropdown-button" href="#" data-activates="dropdown1">
+	      		<%= current_user.first_name %>  <%= current_user.last_name %>
+	      	</a>
+	      </li>
+	    </ul>
+	  <% else %>  
+	  	<ul class="right hide-on-med-and-down">
+	  		<li><%= link_to "Log In", new_user_session_path, class: "waves-effect waves-light btn" %></li>
+	  	</ul>
+    <% end %>
+  </div>
+</nav>

@@ -1,0 +1,21 @@
+<h1>Posts</h1>
+
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+		<h3><%= post.title %></h3>
+		<h5><%= post.link %></h5>
+		<p><%= post.body %></p>
+		<%= link_to 'View', post_path(post) %>
+	<% end %>
+<% else %>
+  <h3>No Posts, please add one!</h3>
+<% end %>
+
+
+<br />
+
+<%= link_to 'Edit Profile', edit_user_registration_path %> |
+<%= link_to 'Add Post', new_post_path %> |
+<%= link_to 'Back', root_path %>
+
+<br />

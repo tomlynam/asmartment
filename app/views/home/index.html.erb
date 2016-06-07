@@ -1,0 +1,13 @@
+<% if current_user %>
+
+	<h1>Welcome, <%= current_user.first_name %>!</h1>
+
+	<p><%= link_to 'Write a Review', new_post_path %></p>
+	<p><%= link_to "Edit Profile", edit_user_registration_path %></p>
+	<p><%= link_to "Log Out", destroy_user_session_path, method: :delete, data: {confirm: 'Really log out?'}%></p>
+
+<% else %>
+
+	<%= link_to "Log In", new_user_session_path %>
+
+<% end %>
