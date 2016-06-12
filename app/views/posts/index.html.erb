@@ -1,31 +1,31 @@
-<h1>Posts</h1>
-
-<div class='row'>
+<div class="row">
 	<% if @posts.any? %>
-	  <% @posts.each do |post| %>
-		  <div class="col s12 m4">
-		    <div class="card blue-grey darken-1">
-		      <div class="card-content white-text">
-		        <span class="card-title"><%= post.title %></span>
-		        <p><%= post.body %></p>
-		      </div>
-		      <div class="card-action">
-		        <%= link_to 'View Post', post_path(post) %>
-		        <%= link_to 'Buy', post.link %>
-		      </div>
-		    </div>
-		  </div>
-		<% end %>
+		<h1>My Posts</h1>
+		  <% @posts.each do |post| %>
+			  <div class="col s12 m4">
+			    <div class="card hoverable blue-grey darken-1">
+			      <div class="card-content white-text">
+			        <span class="card-title"><%= post.title %></span>
+			        <p><%= post.body %></p>
+			      </div>
+			      <div class="card-action">
+			        <%= link_to 'View Post', post_path(post) %>
+			        <%= link_to 'Buy', post.link %>
+			      </div>
+			    </div>
+			  </div>
+			<% end %>
 	<% else %>
-	  <h3>No Posts, please add one!</h3>
+	  <h3>You don't have any posts, please add one!</h3>
 	<% end %>
 </div>
 
+<div class="container-fluid text-center">
+  <%= will_paginate @posts %>
+</div>
 
-<br />
-
-
-<%= link_to 'Add Post', new_post_path %> |
-<%= link_to 'Back', root_path %>
+<div class="center-button">
+<%= link_to 'Add Post', new_post_path, class: "btn" %><br><br>
+</div>
 
 <br />

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :post, except: [:index, :new, :show, :create]
 
   def index
-  	@posts = current_user.posts
+  	@posts = current_user.posts.paginate(:page => params[:page], :per_page => 6)
   end
 
   def show
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def update
   	if @post.update(post_params)
-  		redirect_to posts_path(@post)
+  		redirect_to post_path(@post)
   	else 
   		render :edit
   	end

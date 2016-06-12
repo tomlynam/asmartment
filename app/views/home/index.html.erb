@@ -6,7 +6,7 @@
     <h1>All Posts </h1>
       <% @posts.each do |post| %>
         <div class="col s12 m4">
-          <div class="card blue-grey darken-1">
+          <div class="card hoverable blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title"><%= post.title %></span>
               <p><%= post.body %></p>
@@ -36,3 +36,8 @@
     <br><br>
   </div>
 <% end %>
+
+
+<div class="pagination">
+  <%= will_paginate @posts %>
+</div>

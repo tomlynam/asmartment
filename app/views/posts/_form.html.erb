@@ -5,10 +5,10 @@
   <%= f.text_field :title %>
 
   <%= f.label :link %>
-  <%= f.text_field :link %>
+  <%= f.text_field :link, value: "http://" %>
 
   <%= f.label :body %>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, class: "materialize-textarea" %>
 
   <%= f.submit class: "btn" %>
 
