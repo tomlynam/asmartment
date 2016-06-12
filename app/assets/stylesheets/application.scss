@@ -1,5 +1,6 @@
 @import 'materialize/components/color';
 $primary-color: color("grey", "darken-2") !default;
+$secondary-color: color("light-blue", "darken-1") !default;
 @import 'materialize';
 @import 'app.scss';
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);

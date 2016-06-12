@@ -9,13 +9,6 @@
 }
 
 
-.page-footer {
-	position: absolute;
-  width: 100%;
-  bottom: 0px;
-}
-
-
 body .home {
 	position: fixed;
 	left: 0;
@@ -38,3 +31,22 @@ body .home {
 	position: relative;
 	margin-top: 14%;
 }
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+main {
+  flex: 1 0 auto;
+}
+
+// Commented this out because footer on homepage was floating to the top
+// .page-footer {
+// 	position: relative;
+//   width: 100%;
+//   bottom: 0px;
+// }

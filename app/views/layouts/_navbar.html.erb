@@ -14,7 +14,7 @@
     <% if current_user %>
 	    <ul class="right hide-on-med-and-down">
 	      <li><%= link_to "Write a Review", new_post_path %></li>
-	      <li><a href="#">My Reviews</a></li>
+	       <li><%= link_to "My Reviews", posts_path %></li>
 	      <!-- Dropdown Trigger -->
 	      <li>
 	      	<a class="dropdown-button" href="#" data-activates="dropdown1">
