@@ -1,11 +1,9 @@
-
-
 <%= form_for @post, :html => { :multipart => true } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
   <%= f.label :link %>
-  <%= f.text_field :link, value: "http://" %>
+  <%= f.text_field :link, placeholder: "http://" %>
 
   <%= f.label :body %>
   <%= f.text_area :body, class: "materialize-textarea" %>
@@ -13,3 +11,4 @@
   <%= f.submit class: "btn" %>
 
 <% end %>
+

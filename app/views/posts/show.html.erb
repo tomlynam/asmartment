@@ -4,17 +4,14 @@
 
 <h5><%= link_to "Buy Product", @post.link %></h5>
 
-
-<p><%= @post.body %></p>
+<p class="post-body"><%= @post.body %></p>
 
 <% if current_user.id == @post.user_id %>
 	<hr>
   <%= link_to 'Edit Post', edit_post_path(@post), class: "btn" %>
   <%= link_to 'Delete Post', post_path, class: "btn red", method: :delete, data: {confirm: 'You sure you want to delete?'} %>
 <% end %>
-
-<br>
-<br>
-
-<%= link_to 'All Posts', root_path, class: "btn" %>
-<%= link_to 'My Posts', posts_path, class: "btn" %>
+<span class="right">
+	<%= link_to 'All Posts', root_path, class: "btn" %>
+	<%= link_to 'My Posts', posts_path, class: "btn" %>
+</span>
